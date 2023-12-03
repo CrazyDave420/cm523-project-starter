@@ -1,9 +1,71 @@
 /* ===== YOUR CSS GOES HERE ===== */
 /* ===== START WITH GLOBAL STYLES THEN USE MEDIA QUERIES FOR LAYOUT ADJUSTMENTS ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+  }
+
+/* Store Settings */
+:root {
+    --ff-body: 'Crimson Text', serif;
+    --ff-heading: 'Work Sans', sans-serif;
+  
+    --clr-color1: 
+    --clr-color2: 
+    --clr-color3: 
+    --clr-color4: 
+    --clr-color5: 
+  }
 
 body {
-    background: magenta;
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Make body take full viewport height */
+  }
+
+header.container {
+    border: 
+    flex: 0 1 auto; /* Don't grow, but allow shrink */
+    padding: 20px;
+    text-align: center; /* Center text for h1 and h2 */
 }
-p {
-    font-size: 2em;
+  
+  /* Style for h1 and h2 */
+h1, h2 {
+    margin: 0 0 10px 0; /* Remove default margin and add a small margin between h1 and h2 */
+}
+  
+  /* Style for paragraphs */
+div {
+    flex: 1; /* Grow to take up available space */
+    padding: 20px;
+    overflow-y: auto; /* Add scroll for overflow content */
+}
+  
+/* Style for button */
+button {
+    flex: 0 1 auto; /* Don't grow, but allow shrink */
+    padding: 20px;
+    text-align: center; /* Center the button */
+}
+  
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+button:hover {
+    background-color: #0056b3;
 }
