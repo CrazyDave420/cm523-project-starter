@@ -12,18 +12,19 @@ html {
 
 /* Store Settings */
 :root {
-    --ff-body: 'Crimson Text', serif;
-    --ff-heading: 'Work Sans', sans-serif;
+    --ff-body: 'Roboto', sans-serif;
+    --ff-heading: 'Arbutus', serif;
+    --ff-backup1: 'Raleway', sans-serif;
+    --ff-backup2: 'Roboto Condensed', sans-serif;
   
-    --clr-color1: 
-    --clr-color2: 
-    --clr-color3: 
-    --clr-color4: 
-    --clr-color5: 
+    --clr-color1: #E35555
+    --clr-color2: #252222
+    --clr-color3: #D6CFCB
+    --clr-color4: #726E97
   }
 
 body {
-    font-family: Roboto, sans-serif;
+    font-family: var(--ff-body);
     margin: 0;
     padding: 0;
     display: flex;
