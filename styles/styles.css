@@ -17,56 +17,72 @@ html {
     --ff-backup1: 'Raleway', sans-serif;
     --ff-backup2: 'Roboto Condensed', sans-serif;
   
-    --clr-color1: #E35555
-    --clr-color2: #252222
-    --clr-color3: #D6CFCB
-    --clr-color4: #726E97
+    --clr-color1: #E35555;
+    --clr-color2: #252222;
+    --clr-color3: #D6CFCB;
+    --clr-color4: #726E97;
   }
 
 body {
-    font-family: var(--ff-body);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* Make body take full viewport height */
-  }
+  background: var(--clr-color1);
+  font-family: var(--ff-body);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start; /* Aligns children to the start of the main axis */
+}
 
 header.container {
-    border: 
-    flex: 0 1 auto; /* Don't grow, but allow shrink */
-    padding: 20px;
-    text-align: center; /* Center text for h1 and h2 */
+  border: 1px solid black;
+  padding: 20px;
+  text-align: center;
+  width: 70%; 
+  margin: 0 auto; 
 }
-  
-  /* Style for h1 and h2 */
+
+/* Style for h1 and h2 */
 h1, h2 {
-    margin: 0 0 10px 0; /* Remove default margin and add a small margin between h1 and h2 */
+    margin: 0 0 10px 0; /* Removed the top margin to align with the top of the page */
 }
-  
-  /* Style for paragraphs */
-div {
-    flex: 1; /* Grow to take up available space */
+
+h1{
+  font-family: var(--ff-heading);
+  margin: 10px 0;
+  font-size: 6em;
+}
+
+h2 {
+  margin: 10px 0;
+  font-size: 2em; 
+  font-family: var(--ff-backup1);
+}
+
+/* Style for paragraphs */
+div.container {
     padding: 20px;
-    overflow-y: auto; /* Add scroll for overflow content */
+    text-align: center;
+    width: 70%; 
+    margin: 0 auto; 
+    line-height: 3em;
 }
-  
+
+p{
+font-size: 1.5em;
+}
+
 /* Style for button */
 button {
-    flex: 0 1 auto; /* Don't grow, but allow shrink */
-    padding: 20px;
-    text-align: center; /* Center the button */
-}
-  
-button {
     padding: 10px 20px;
+    margin-top: 20px; /* Adds margin to the top of the button */
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    align-self: center; /* Center the button horizontally */
 }
-  
+
 button:hover {
-    background-color: #0056b3;
+
 }
