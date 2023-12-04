@@ -19,7 +19,7 @@ html {
   
     --clr-color1: #e04d4d;
     --clr-color2: #0F0F0F;
-    --clr-color3: #ece3e3;
+    --clr-color3: #ffffff;
     --clr-color4: #726E97;
   }
 
@@ -43,6 +43,7 @@ header.container {
   z-index: 1;
 }
 
+
 header.container::before {
   content: '';
   position: absolute;
@@ -55,14 +56,15 @@ header.container::before {
     url('../images/dan-burton-c6apkDMzTuo-unsplash.jpg'),
     url('../images/tijs-van-leur-Qnlp3FCO2vc-unsplash.jpg'),
     url('../images/austin-neill-hgO1wFPXl3I-unsplash.jpg');
-  background-size: calc(100% / 3) auto, calc(100% / 3) auto, calc(100% / 3) auto;
-  background-position: left center, center center, right center;
+  background-size: 33.33% auto, 33.33% auto, 33.33% auto;
+  background-position: left top, center top, right top;
   background-repeat: no-repeat;
   filter: grayscale(100%);
+  opacity: 80%;
 }
 
 .text-box {
-  background-color: rgba(255, 255, 255, 0.61);
+  background-color: rgba(255, 255, 255, 0.718);
   display: inline-block;
   padding: 20px;
   margin: 0 auto;
@@ -73,19 +75,58 @@ header.container::before {
 /* Style for h1 and h2 */
 h1, h2 {
     margin: 0 0 10px 0;
-    color:var(--clr-color2)
 }
 
 h1{
   font-family: var(--ff-heading);
   margin: 10px 0;
   font-size: 6em;
+  color:var(--clr-color2);
 }
 
 h2 {
   margin: 10px 0;
   font-size: 2em; 
   font-family: var(--ff-backup1);
+  color:var(--clr-color2);
+}
+
+@media (max-width: 768px) {
+  header.container {
+    padding: 30px;
+  }
+
+  header.container::before {
+    background-size: 33.33% auto, 33.33% auto, 33.33% auto;
+    background-position: left top, center top, right top;
+  }
+
+  h1 {
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .text-box {
+    width: 100%;
+    padding: 15px; 
+    font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+  .text-box {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7em;
+  }
+
+  header.container::before {
+    background-size: 33.33% auto, 33.33% auto, 33.33% auto;
+    background-position: left top, center top, right top;
+  }
 }
 
 /* Style for paragraphs */
@@ -94,21 +135,22 @@ div.container {
     text-align: center;
     width: 70%; 
     margin: 0 auto; 
-    line-height: 2em;
-    letter-spacing: 0.1em;
+    line-height: 2.5em;
+    letter-spacing: 0.05em;
 }
 
 p{
 font-size: 1.5em;
-color:var(--clr-color3)
+color:var(--clr-color3);
+margin: 20px auto;
 }
 
 /* Style for button */
 button {
     padding: 10px 20px;
     margin-top: 20px; 
-    background-color:#726e97d8;
-    color:#ece3e3;
+    background-color:var(--clr-color4);
+    color:var(--clr-color3);
     font-family:var(--ff-backup1);
     font-size: 3em;
     border: none;
