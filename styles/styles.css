@@ -70,6 +70,7 @@ header.container::before {
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  max-width: 1200px;
 }
 
 /* Style for h1 and h2 */
@@ -91,9 +92,33 @@ h2 {
   color:var(--clr-color2);
 }
 
+@media (max-width: 945px){
+  h1 {
+    font-size: 5em;
+    line-height: normal;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 780px){
+  h1 {
+    font-size: 4.5em;
+    line-height: normal;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    line-height: normal;
+  }
+}
+
 @media (max-width: 768px) {
   header.container {
-    padding: 30px;
+    padding-bottom: 0;
   }
 
   header.container::before {
@@ -103,16 +128,19 @@ h2 {
 
   h1 {
     font-size: 4em;
+    line-height: normal;
   }
 
   h2 {
     font-size: 1.5em;
+    line-height: normal;
   }
 
   .text-box {
+    position: relative;
     width: 100%;
-    padding: 15px; 
-    font-size: 0.8em;
+    padding: 15px;
+    font-size: 0.8em; 
     }
 }
 
@@ -121,6 +149,11 @@ h2 {
     width: 100%;
     padding: 10px;
     font-size: 0.7em;
+    top: 0;
+  }
+
+  h1, h2 {
+    line-height: normal;
   }
 
   header.container::before {
