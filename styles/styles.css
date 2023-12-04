@@ -33,6 +33,7 @@ body {
   justify-content: start;
 }
 
+/* Style for h1 and h2 */
 header.container {
   padding-top: 0;
   padding-bottom: 50px;
@@ -42,7 +43,6 @@ header.container {
   position: relative;
   z-index: 1;
 }
-
 
 header.container::before {
   content: '';
@@ -73,7 +73,6 @@ header.container::before {
   max-width: 1200px;
 }
 
-/* Style for h1 and h2 */
 h1, h2 {
     margin: 0 0 10px 0;
 }
@@ -90,6 +89,36 @@ h2 {
   font-size: 2em; 
   font-family: var(--ff-backup1);
   color:var(--clr-color2);
+}
+
+/* Style for paragraphs */
+div.container {
+    padding: 20px;
+    text-align: center;
+    width: 70%; 
+    margin: 0 auto; 
+    line-height: 2.5em;
+    letter-spacing: 0.05em;
+}
+
+p{
+font-size: 1.5em;
+color:var(--clr-color3);
+margin: 20px auto;
+}
+
+/* Style for button */
+button {
+    padding: 10px 20px;
+    margin-top: 20px; 
+    background-color:var(--clr-color4);
+    color:var(--clr-color3);
+    font-family:var(--ff-backup1);
+    font-size: 3em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
 }
 
 @media (max-width: 945px){
@@ -113,6 +142,10 @@ h2 {
   h2 {
     font-size: 1.3em;
     line-height: normal;
+  }
+
+  p {
+    font-size: 1.3em;
   }
 }
 
@@ -157,37 +190,12 @@ h2 {
   }
 
   header.container::before {
+    display: none;
     background-size: 33.33% auto, 33.33% auto, 33.33% auto;
     background-position: left top, center top, right top;
   }
-}
 
-/* Style for paragraphs */
-div.container {
-    padding: 20px;
-    text-align: center;
-    width: 70%; 
-    margin: 0 auto; 
-    line-height: 2.5em;
-    letter-spacing: 0.05em;
-}
-
-p{
-font-size: 1.5em;
-color:var(--clr-color3);
-margin: 20px auto;
-}
-
-/* Style for button */
-button {
-    padding: 10px 20px;
-    margin-top: 20px; 
-    background-color:var(--clr-color4);
-    color:var(--clr-color3);
-    font-family:var(--ff-backup1);
-    font-size: 3em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: center;
+  p {
+    font-size: 1em;
+  }
 }
