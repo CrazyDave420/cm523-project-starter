@@ -131,7 +131,7 @@ button {
 }
 
 button:hover {
-  background-color: darken(var(--clr-color4), 10%);
+  background-color:#2e2a4e;
 }
 
 /* Style for map */
