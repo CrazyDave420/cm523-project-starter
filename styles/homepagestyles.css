@@ -63,6 +63,10 @@ header.container::before {
   opacity: 80%;
 }
 
+.header-no-bg::before {
+  display: none;
+}
+
 .text-box {
   background-color: rgba(255, 255, 255, 0.718);
   display: inline-block;
@@ -71,6 +75,10 @@ header.container::before {
   position: relative;
   z-index: 2;
   max-width: 1200px;
+}
+
+.text-box.collapsed {
+  height: 250px;
 }
 
 h1, h2 {
@@ -93,12 +101,12 @@ h2 {
 
 /* Style for paragraphs */
 div.container {
-    padding: 20px;
-    text-align: center;
-    width: 70%; 
-    margin: 0 auto; 
-    line-height: 2.5em;
-    letter-spacing: 0.05em;
+  padding: 20px;
+  text-align: center;
+  width: 70%; 
+  margin: 0 auto; 
+  line-height: 2.5em;
+  letter-spacing: 0.05em;
 }
 
 p{
@@ -119,6 +127,27 @@ button {
     border-radius: 5px;
     cursor: pointer;
     align-self: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: darken(var(--clr-color4), 10%);
+}
+
+/* Style for map */
+.map-container {
+  display: none;
+  position: absolute;
+  top: 65%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #726E97;
+  width: 70vw;
+  height: 70vh;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 945px){
