@@ -34,6 +34,18 @@ function initMap() {
   setMarkers(map);
 }
 
+function setMarkers(map) {
+  const image = {
+    url: 'cm523-project-starter\images\flying-v-34825_640.png',
+    size: new google.maps.Size(20, 32),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(0, 32),
+  };
+
+  const shape = {
+    coords: [1, 1, 1, 20, 18, 20, 18, 1],
+    type: 'poly',
+  };
 
   const bostonVenues = [
     ["MGM Music Hall", 42.347076, -71.094566, 1],
@@ -45,32 +57,9 @@ function initMap() {
     ["Agganis Arena", 42.3522233, -71.11773, 7],
     ["Brighton Music Hall", 42.3526574, -71.1326369, 8],
   ];
-
-
-  bostonVenues.forEach(place => {
-    const marker = new google.maps.Marker({
-      position: { lat: place[1], lng: place[2] },
-      map: map,
-      title: place[0]
-
-    });
-  });
-
-  function setMarkers(map) {
-    const image = {
-      url: 'path/to/your/custom-icon.png', // 您的自定义图标 URL
-      size: new google.maps.Size(20, 32),
-      origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(0, 32),
-    };
   
-    const shape = {
-      coords: [1, 1, 1, 20, 18, 20, 18, 1],
-      type: 'poly',
-    };
-  
-    bostonVenues.forEach(venue => {
-      new google.maps.Marker({
+  bostonVenues.forEach(venue => {
+    new google.maps.Marker({
         position: { lat: venue[1], lng: venue[2] },
         map: map,
         icon: image,
