@@ -43,7 +43,7 @@ function setMarkers(map) {
   };
 
   const hoverIcon = {
-    url: 'https://drive.google.com/uc?export=download&id=1ZCe8VLK-H4WucfUThl9-a4dolcGanzpg', // 如果您有不同的图标用于悬停效果，更换URL
+    url: 'https://drive.google.com/uc?export=download&id=1ZCe8VLK-H4WucfUThl9-a4dolcGanzpg',
     size: new google.maps.Size(32, 37),
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(16, 37),
@@ -81,7 +81,7 @@ function setMarkers(map) {
 
     marker.addListener('mouseout', () => {
       marker.setIcon(defaultIcon);
-      marker.setZIndex(venue[3]); // 或者设置为任意初始zIndex值
+      marker.setZIndex(venue[3]);
     });
     });
   }
