@@ -35,11 +35,18 @@ function initMap() {
 }
 
 function setMarkers(map) {
-  const image = {
-    url: 'cm523-project-starter\images\flying-v-34825_640.png',
-    size: new google.maps.Size(20, 32),
+  const defaultIcon = {
+    url: 'https://drive.google.com/uc?export=download&id=1ZCe8VLK-H4WucfUThl9-a4dolcGanzpg',
+    size: new google.maps.Size(32, 37),
     origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(0, 32),
+    anchor: new google.maps.Point(16, 37),
+  };
+
+  const hoverIcon = {
+    url: 'https://drive.google.com/uc?export=download&id=1ZCe8VLK-H4WucfUThl9-a4dolcGanzpg', // 如果您有不同的图标用于悬停效果，更换URL
+    size: new google.maps.Size(32, 37),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(16, 37),
   };
 
   const shape = {
@@ -59,14 +66,23 @@ function setMarkers(map) {
   ];
   
   bostonVenues.forEach(venue => {
-    new google.maps.Marker({
-        position: { lat: venue[1], lng: venue[2] },
-        map: map,
-        icon: image,
-        shape: shape,
-        title: venue[0],
-        zIndex: venue[3],
-      });
+    const marker = new google.maps.Marker({
+      position: { lat: venue[1], lng: venue[2] },
+      map: map,
+      icon: defaultIcon,
+      title: venue[0],
+      zIndex: venue[3],
+    });
+
+    marker.addListener('mouseover', () => {
+      marker.setIcon(hoverIcon);
+      marker.setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
+    });
+
+    marker.addListener('mouseout', () => {
+      marker.setIcon(defaultIcon);
+      marker.setZIndex(venue[3]); // 或者设置为任意初始zIndex值
+    });
     });
   }
   
