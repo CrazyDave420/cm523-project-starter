@@ -44,9 +44,9 @@ function setMarkers(map) {
 
   const hoverIcon = {
     url: 'https://drive.google.com/uc?export=download&id=1ZCe8VLK-H4WucfUThl9-a4dolcGanzpg',
-    size: new google.maps.Size(32, 37),
+    size: new google.maps.Size(32, 42),
     origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(16, 37),
+    anchor: new google.maps.Point(16, 42),
   };
 
   const shape = {
@@ -55,14 +55,13 @@ function setMarkers(map) {
   };
 
   const bostonVenues = [
-    ["MGM Music Hall", 42.347076, -71.094566, 1],
-    ["Fenway Park", 42.3467, -71.0972, 2],
-    ["TD Garden", 42.3662, -71.0621, 3],
-    ["Roadrunner", 42.3566, -71.1439, 4],
-    ["House of Blues", 42.3474068, -71.0959362, 5],
-    ["Paradise Rock Club", 42.3517507, -71.1195613, 6],
-    ["Agganis Arena", 42.3522233, -71.11773, 7],
-    ["Brighton Music Hall", 42.3526574, -71.1326369, 8],
+    ["MGM Music Hall", 42.347076, -71.094566, 1, '../images/mgm1.jpg'],
+    ["Fenway Park", 42.3467, -71.0972, 2, '../images/fenway1.jpg'],
+    ["TD Garden", 42.3662, -71.0621, 3, '../images/TD1.jpg'],
+    ["Roadrunner", 42.3566, -71.1439, 4, '../images/roadrunner1.jpg'],
+    ["House of Blues", 42.3474068, -71.0959362, 5, '../images/houseofblues1.jpg'],
+    ["Paradise Rock Club", 42.3517507, -71.1195613, 6, '../images/paradise-rock-club-1.jpg'],
+    ["Brighton Music Hall", 42.3526574, -71.1326369, 7, '../images/brightonmusichall1.jpg'],
   ];
   
   bostonVenues.forEach(venue => {
@@ -74,17 +73,36 @@ function setMarkers(map) {
       zIndex: venue[3],
     });
 
+    const infoWindowContent = document.createElement('div');
+    infoWindowContent.style.width = '200px';
+    const imageElement = document.createElement('img');
+    imageElement.style.width = '100%';
+    imageElement.src = venue[4]; // 设置图片
+    infoWindowContent.style.backgroundColor = '#ffffff';
+    infoWindowContent.style.color = '#726E97';
+    infoWindowContent.style.fontFamily = 'Roboto, sans-serif';
+    const venueNameElement = document.createElement('h3');
+    venueNameElement.textContent = venue[0];
+    infoWindowContent.appendChild(imageElement);
+    infoWindowContent.appendChild(venueNameElement);
+
+    const infoWindow = new google.maps.InfoWindow({
+      content: infoWindowContent
+    });
+
     marker.addListener('mouseover', () => {
       marker.setIcon(hoverIcon);
       marker.setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
+      infoWindow.open(map, marker);
     });
 
     marker.addListener('mouseout', () => {
       marker.setIcon(defaultIcon);
       marker.setZIndex(venue[3]);
+      infoWindow.close();
     });
-    });
-  }
+  });
+}
   
 
 window.initMap = initMap;
