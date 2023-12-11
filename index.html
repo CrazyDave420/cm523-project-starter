@@ -18,6 +18,7 @@
     <!-- LINK TO YOUR STYLES -->
     <link rel="stylesheet" href="styles/homepagestyles.css" />
     <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
     <script src="scripts/scripts.js" defer></script>
     
@@ -36,8 +37,9 @@
 </div>
 <button>Let's Go!</button>
 <div class="map-container">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23554.95024067413!2d-71.08922905614492!3d42.3495565047947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1701822535767!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div id="map"></div> <!-- 地图容器 -->
 </div>
     <!-- YOUR EXTERNAL PLUG-IN MAY ASK YOU TO PUT A SCRIPT TAG HERE. -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA38dQcXZfBfwzoRKEeKXUTZlz49GEP12A&callback=initMap" async defer></script>
   </body>
 </html>
