@@ -24,11 +24,20 @@ button.addEventListener('click', function() {
   button.style.display = 'none';
 });
 
+const styles = {
+  hiding: [
+    {
+      featureType: "poi.business",
+      stylers: [{ visibility: "off" }],
+    },
+  ],
+};
 
 function initMap() {
   const map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
-    center: { lat: 42.3601, lng: -71.0589 }
+    center: { lat: 42.3601, lng: -71.0589 },
+    styles: styles.hiding
   });
 
   setMarkers(map);
@@ -40,6 +49,7 @@ function setMarkers(map) {
     size: new google.maps.Size(32, 37),
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(16, 37),
+    styles: styles.hiding
   };
 
   const hoverIcon = {
@@ -71,6 +81,26 @@ function setMarkers(map) {
       icon: defaultIcon,
       title: venue[0],
       zIndex: venue[3],
+    });
+
+    marker.addListener('click', () => {
+      const detailsElement = document.getElementById('venue-details');
+      detailsElement.innerHTML = `
+        <button class="back-button">Back</button>
+        <h3>${venue[0]}</h3>
+        <img src="${venue[4]}" alt="${venue[0]}" style="width:100%;">
+        <p>详细介绍</p>
+        <p>详细地址</p>
+        <a href="https://example.com">官方网站</a>
+      `;
+      detailsElement.classList.remove('hidden');
+      detailsElement.classList.add('visible');
+  
+      // 为返回按钮添加点击事件
+      detailsElement.querySelector('.back-button').addEventListener('click', () => {
+        detailsElement.classList.remove('visible');
+        detailsElement.classList.add('hidden');
+      });
     });
 
     const infoWindowContent = document.createElement('div');

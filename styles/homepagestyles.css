@@ -155,6 +155,43 @@ button:hover {
   display: none;
 }
 
+/* Style for venue detail*/
+#venue-details {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 30%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--clr-color2);
+  overflow-y: auto;
+  padding: 20px;
+  box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+#venue-details.visible {
+  transform: translateX(0);
+}
+
+#venue-details h3 {
+  margin-top: 0;
+}
+
+/* 添加样式化返回按钮 */
+#venue-details .back-button {
+  background: var(--clr-color4);
+  color: var(--clr-color3);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+
 @media (max-width: 945px){
   h1 {
     font-size: 5em;
