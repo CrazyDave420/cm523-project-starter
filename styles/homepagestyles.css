@@ -39,7 +39,7 @@ body {
 
 .main-content {
   flex: 1;
-  min-height: 100vh;
+  min-height: 105vh;
 }
 
 /* Style for h1 and h2 */
