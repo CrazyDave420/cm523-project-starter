@@ -90,7 +90,7 @@ function setMarkers(map) {
         <h1>${venue[0]}</h1>
         <img src="${venue[4]}" alt="${venue[0]}" style="width:100%;">
         <p>${venue[5]}</p>
-        <p>${venue[6]}</p>
+        <div>${venue[6]}</div>
         <a href=${venue[7]}>Official Website</a>
       `;
       detailsElement.classList.remove('hidden');
