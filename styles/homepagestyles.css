@@ -240,6 +240,34 @@ text-decoration: none;
   background: rgba(0, 0, 0, 0.1);
 }
 
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--clr-color4);
+  color: var(--clr-color3);
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: var(--clr-color3);
+  font-family: var(--ff-backup1);
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+
+  /* Optional: Add some padding and border to make it look like a button */
+  padding: 10px 20px;
+  border: 2px solid var(--clr-color3);
+  border-radius: 5px;
+}
+
+.footer-link:hover {
+  color: var(--clr-color1);
+  border-color: var(--clr-color1);
+}
 
 @media (max-width: 945px){
   h1 {
@@ -316,6 +344,15 @@ text-decoration: none;
 
   #venue-details.visible {
   transform: translate(-50%, -50%);
+
+  .footer-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .footer-link {
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 480px) {
