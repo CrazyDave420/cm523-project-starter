@@ -147,10 +147,11 @@ button:hover {
   transform: translate(-50%, -50%);
   width: 70%;
   height: 70%;
+  border: 3px solid var(--clr-color4);
   margin-top: 90px;
   display: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -294,6 +295,10 @@ text-decoration: none;
     padding: 15px;
     font-size: 0.8em; 
     }
+
+  .map-container{
+    width: 100%;
+  }
 
   #venue-details {
     position: absolute;
