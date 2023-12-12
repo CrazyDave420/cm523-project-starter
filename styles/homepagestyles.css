@@ -129,7 +129,7 @@ margin: 20px auto;
 button {
     padding: 10px 20px;
     margin-top: 20px; 
-    background-color:var(--clr-color4);
+    background-color:var(--clr-color2);
     color:var(--clr-color3);
     font-family:var(--ff-backup1);
     font-size: 3em;
