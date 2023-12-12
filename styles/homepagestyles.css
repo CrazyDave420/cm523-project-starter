@@ -147,7 +147,7 @@ button:hover {
   transform: translate(-50%, -50%);
   width: 70%;
   height: 70%;
-  border: 3px solid var(--clr-color4);
+  border: 8px solid var(--clr-color4);
   margin-top: 90px;
   display: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -339,4 +339,4 @@ text-decoration: none;
   p {
     font-size: 1em;
   }
-}
+}}
