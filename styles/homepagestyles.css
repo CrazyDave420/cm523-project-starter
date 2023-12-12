@@ -187,7 +187,9 @@ button:hover {
 #venue-details .back-button {
   background: var(--clr-color4);
   color: var(--clr-color3);
-  padding: 10px 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 5px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -292,6 +294,23 @@ text-decoration: none;
     padding: 15px;
     font-size: 0.8em; 
     }
+
+  #venue-details {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; 
+    height: auto; 
+    max-height: 90%;
+    overflow-y: auto;
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    }  
+
+  #venue-details.visible {
+  transform: translate(-50%, -50%);
 }
 
 @media (max-width: 480px) {
