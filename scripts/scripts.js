@@ -93,6 +93,7 @@ function setMarkers(map) {
         <a href=${venue[7]}>Official Website</a>
         <button class="back-button">Back</button>
       `;
+      detailsElement.scrollTop = 0;
       detailsElement.classList.remove('hidden');
       detailsElement.classList.add('visible');
   
