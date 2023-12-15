@@ -389,11 +389,12 @@ footer {
   }
   footer {
     flex-direction: column;
-    padding: 20px;
+    padding: 15px;
   }
 
   .footer-link {
     margin-bottom: 10px;
+    font-size: 1.2em;
   }
 }
 
@@ -416,6 +417,14 @@ footer {
   }
 
   p {
+    font-size: 1em;
+  }
+
+  footer {
+    padding: 0;
+  }
+
+  .footer-link {
     font-size: 1em;
   }
 }
