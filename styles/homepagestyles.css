@@ -179,13 +179,14 @@ button:hover {
 
 /* Style for venue detail*/
 #venue-details {
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 0;
   width: 40%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.922);
+  background-color: rgba(255, 255, 255, 0.952);
   color: var(--clr-color2);
+  max-height: 90vh;
   overflow-y: auto;
   padding: 2em 3em;
   box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.5);
@@ -371,13 +372,14 @@ footer {
   }
 
   #venue-details {
-    position: absolute;
+    position: fixed;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%; 
+    top: auto;
+    bottom: 0;
+    transform: none;
+    width: 100%; 
     height: auto; 
-    max-height: 90%;
+    max-height: 90vh;
     overflow-y: auto;
     box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease-in-out;
