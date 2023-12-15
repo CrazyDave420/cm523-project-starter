@@ -37,7 +37,7 @@ function initMap() {
   let zoomLevel = 13;
 
   if (window.matchMedia("(max-width: 768px)").matches) {
-    zoomLevel = 10;
+    zoomLevel = 8;
   }
 
   const map = new google.maps.Map(document.getElementById('map'), {
