@@ -363,6 +363,10 @@ footer {
     font-size: 1.5em;
   }
 
+  button {
+    font-size: 2.2em;
+  }
+
   .text-box {
     position: relative;
     width: 100%;
