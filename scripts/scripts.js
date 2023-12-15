@@ -83,8 +83,11 @@ function setMarkers(map) {
       zIndex: venue[3],
     });
 
+    google.maps.event.clearListeners(marker, 'click');
+
     marker.addListener('click', () => {
       const detailsElement = document.getElementById('venue-details');
+      detailsElement.scrollTop = 0;
       detailsElement.innerHTML = `
         <h1>${venue[0]}</h1>
         <img src="${venue[4]}" alt="${venue[0]}" style="width:100%;">
@@ -93,15 +96,21 @@ function setMarkers(map) {
         <a href=${venue[7]}>Official Website</a>
         <button class="back-button">Back</button>
       `;
-      detailsElement.scrollTop = 0;
       detailsElement.classList.remove('hidden');
       detailsElement.classList.add('visible');
   
-      detailsElement.querySelector('.back-button').addEventListener('click', () => {
-        detailsElement.classList.remove('visible');
-        detailsElement.classList.add('hidden');
-      });
+      const backButton = detailsElement.querySelector('.back-button');
+      backButton.removeEventListener('click', backButtonClickHandler);
+      backButton.addEventListener('click', backButtonClickHandler);
     });
+
+    function backButtonClickHandler() {
+      const detailsElement = document.getElementById('venue-details');
+      detailsElement.classList.remove('visible');
+      detailsElement.classList.add('hidden');
+      detailsElement.scrollTop = 0;
+    }
+    
 
     const infoWindowContent = document.createElement('div');
     infoWindowContent.style.width = '200px';
@@ -135,4 +144,4 @@ function setMarkers(map) {
 }
   
 
-window.initMap = initMap;
+window.initMap = initMap; 
