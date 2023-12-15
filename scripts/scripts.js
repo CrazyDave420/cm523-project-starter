@@ -35,14 +35,16 @@ const styles = {
 
 function initMap() {
   let zoomLevel = 13;
+  let mapCenter = { lat: 42.3601, lng: -71.0589 };
 
   if (window.matchMedia("(max-width: 768px)").matches) {
     zoomLevel = 8;
+    mapCenter = { lat: 42.3467, lng: -71.0972 }
   }
 
   const map = new google.maps.Map(document.getElementById('map'), {
     zoom: zoomLevel,
-    center: { lat: 42.3601, lng: -71.0589 },
+    center: mapCenter,
     styles: styles.hiding
   });
 
