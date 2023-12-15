@@ -38,7 +38,7 @@ function initMap() {
   let mapCenter = { lat: 42.3601, lng: -71.0589 };
 
   if (window.matchMedia("(max-width: 768px)").matches) {
-    zoomLevel = 8;
+    zoomLevel = 11;
     mapCenter = { lat: 42.3467, lng: -71.0972 }
   }
 
